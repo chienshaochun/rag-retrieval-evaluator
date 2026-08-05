@@ -1,6 +1,11 @@
 """Core evaluation utilities for RAG retrieval results."""
 
-from .evaluation import evaluate_matched_query
+from .comparison import (
+    calculate_aggregate_metric_deltas,
+    calculate_query_metric_deltas,
+)
+from .evaluation import evaluate_matched_queries, evaluate_matched_query
+from .failure_analysis import generate_failure_tags, summarize_failure_tags
 from .metrics import (
     aggregate_metrics,
     build_ranked_document_ids,
@@ -21,7 +26,12 @@ from .validation import (
 )
 
 __all__ = [
+    "calculate_aggregate_metric_deltas",
+    "calculate_query_metric_deltas",
     "evaluate_matched_query",
+    "evaluate_matched_queries",
+    "generate_failure_tags",
+    "summarize_failure_tags",
     "aggregate_metrics",
     "build_ranked_document_ids",
     "depth_coverage_at_k",
