@@ -19,16 +19,21 @@ description: >-
 1. Locate the ground-truth JSON file and retrieval-results JSON file.
 2. Confirm `k_values` and `primary_k` with the user. Ask for them when missing;
    do not silently choose evaluation cutoffs.
-3. Resolve bundled paths relative to this `SKILL.md` file.
-4. Run `scripts/evaluate_rag.py` with absolute input and output paths.
-5. Stop on a nonzero exit code. Report the validation or file error and do not
+3. Determine the evaluation JSON path and Markdown report path. When the user
+   omits the report path, place it beside the JSON as
+   `<evaluation-output-stem>.report.md`.
+4. Resolve bundled paths relative to this `SKILL.md` file.
+5. Run `scripts/evaluate_rag.py` with absolute input and output paths.
+6. Stop on a nonzero exit code. Report the validation or file error and do not
    create an evaluation narrative from invalid data.
-6. Inspect `status`, validation warnings, and query coverage before interpreting
+7. Inspect `status`, validation warnings, and query coverage before interpreting
    any metric.
-7. Compare aggregate metrics before and after reranking, then inspect query tags
+8. Compare aggregate metrics before and after reranking, then inspect query tags
    and failure cases for changes hidden by averages.
-8. Produce the report in the user's language. Separate observed facts, possible
-   causes, recommended checks, and improvement actions.
+9. Produce the report in the user's language. Separate observed facts, possible
+   causes, recommended checks, and improvement actions, then save it as UTF-8
+   Markdown. Do not leave the full report only in the conversation.
+10. Return a concise chat summary with both saved output paths.
 
 ## Run the Evaluator
 
@@ -46,6 +51,11 @@ python <skill-dir>/scripts/evaluate_rag.py \
 Keep the output path different from both input paths. Treat the generated JSON
 as the sole source of metric values; do not recalculate or alter metrics by
 hand.
+
+If the evaluation output is `results/run-01/evaluation.json` and the user does
+not supply a report path, use `results/run-01/evaluation.report.md`. Do not
+silently overwrite an existing JSON or report; ask before overwriting or choose
+a new run-specific path with the user.
 
 ## Interpret the Result
 
@@ -69,6 +79,9 @@ hand.
 Read `references/report-guidance.md` before writing a user-facing report. Cover
 the evaluation scope, data quality, aggregate comparison, reranker impact,
 failure distribution, representative cases, recommendations, and limitations.
+Always save the completed report as UTF-8 Markdown after a successful evaluator
+run. Save the diagnostic no-matched-queries report too. Do not create a report
+when input validation fails or the evaluator exits unsuccessfully.
 
 For every recommendation:
 
@@ -94,6 +107,7 @@ from very small datasets or low query coverage.
 ## Guardrails
 
 - Preserve the input files and write results to a separate output path.
+- Keep the report path different from both input files and the evaluation JSON.
 - Treat ranking array order as authoritative; scores are optional supporting
   data and do not replace array order.
 - Require the before- and after-reranking lists to contain the same candidate

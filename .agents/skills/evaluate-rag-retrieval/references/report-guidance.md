@@ -10,6 +10,7 @@ replace, or silently correct metric values while writing the report.
 - [Inspect the Evaluation Safely](#inspect-the-evaluation-safely)
 - [Handle No Matched Queries](#handle-no-matched-queries)
 - [Write the Seven Report Sections](#write-the-seven-report-sections)
+- [Persist the Report](#persist-the-report)
 - [Present Metric Comparisons](#present-metric-comparisons)
 - [Describe Reranker Impact](#describe-reranker-impact)
 - [Summarize Failure Distribution](#summarize-failure-distribution)
@@ -137,6 +138,33 @@ every query into the main report.
 
 Prioritize concrete checks and experiments by system layer. End with the limits
 of what this retrieval evaluation can establish.
+
+## Persist the Report
+
+Save every report produced after a successful evaluator run as UTF-8 Markdown.
+Do not leave the only complete copy in the conversation.
+
+Use the report path supplied by the user. When no report path is supplied,
+derive it from the evaluation JSON path:
+
+```text
+results/run-01/evaluation.json
+-> results/run-01/evaluation.report.md
+```
+
+Keep the report separate from the input files and evaluation JSON. Do not
+silently overwrite an existing report or JSON result; ask before overwriting or
+agree on a new run-specific path.
+
+Save the short diagnostic report when `status` is `no_matched_queries`. Do not
+save a narrative report when input validation fails or the evaluator returns a
+nonzero exit code, because no valid evaluation JSON exists to support it.
+
+After writing the report, respond with:
+
+- the evaluation JSON path;
+- the Markdown report path;
+- a concise summary of the main result.
 
 ## Present Metric Comparisons
 
@@ -367,6 +395,7 @@ Limitations: ...
 
 Write the report in the user's language unless the user requests another
 language. Keep technical field names in code formatting when precision helps.
+Write the complete rendered report to the selected Markdown path.
 
 ## No-Matched-Queries Template
 

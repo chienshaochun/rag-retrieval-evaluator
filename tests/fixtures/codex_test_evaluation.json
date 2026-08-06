@@ -1,0 +1,739 @@
+{
+  "schema_version": "1.0",
+  "status": "completed",
+  "dataset_name": "industrial-maintenance-e2e-demo",
+  "run_name": "hybrid-search-plus-reranker-e2e-demo",
+  "configuration": {
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "primary_k": 3
+  },
+  "validation_warnings": [
+    "results[0].after_reranking[0].score should be a finite number; array order remains authoritative"
+  ],
+  "pairing": {
+    "missing_retrieval_result_query_ids": [
+      "query-006"
+    ],
+    "missing_ground_truth_query_ids": [
+      "query-999"
+    ],
+    "coverage": {
+      "ground_truth_query_count": 6,
+      "retrieval_result_query_count": 6,
+      "matched_query_count": 5,
+      "result_coverage": 0.8333333333333334,
+      "ground_truth_coverage": 0.8333333333333334
+    }
+  },
+  "evaluation": {
+    "primary_k": 3,
+    "evaluated_query_count": 5,
+    "query_results": [
+      {
+        "query_id": "query-001",
+        "query_text": "How do I reset the pump overload alarm?",
+        "relevant_document_ids": [
+          "doc-pump-reset"
+        ],
+        "before_reranking": {
+          "ranked_document_ids": [
+            "doc-alarm-overview",
+            "doc-pump-safety",
+            "doc-pump-faq",
+            "doc-pump-reset",
+            "doc-legacy-pump"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 0.25,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.43067655807339306
+            }
+          }
+        },
+        "after_reranking": {
+          "ranked_document_ids": [
+            "doc-pump-reset",
+            "doc-alarm-overview",
+            "doc-pump-safety",
+            "doc-pump-faq",
+            "doc-legacy-pump"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 1,
+              "3": 1,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 1.0,
+              "3": 0.3333333333333333,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 1.0,
+              "3": 1.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 1.0,
+            "ndcg_at_k": {
+              "1": 1.0,
+              "3": 1.0,
+              "5": 1.0
+            }
+          }
+        },
+        "metric_deltas": {
+          "hit_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 0.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.0
+          },
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 0.0
+          },
+          "reciprocal_rank": 0.75,
+          "ndcg_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 0.5693234419266069
+          }
+        },
+        "depth_coverage_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0
+        },
+        "failure_tags": [
+          "reranker_rescue",
+          "reranker_improvement"
+        ]
+      },
+      {
+        "query_id": "query-002",
+        "query_text": "What should I inspect when the motor overheats?",
+        "relevant_document_ids": [
+          "doc-motor-thermal"
+        ],
+        "before_reranking": {
+          "ranked_document_ids": [
+            "doc-motor-thermal",
+            "doc-bearing",
+            "doc-motor-wiring",
+            "doc-lubrication",
+            "doc-cooling-fan"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 1,
+              "3": 1,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 1.0,
+              "3": 0.3333333333333333,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 1.0,
+              "3": 1.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 1.0,
+            "ndcg_at_k": {
+              "1": 1.0,
+              "3": 1.0,
+              "5": 1.0
+            }
+          }
+        },
+        "after_reranking": {
+          "ranked_document_ids": [
+            "doc-bearing",
+            "doc-motor-wiring",
+            "doc-lubrication",
+            "doc-motor-thermal",
+            "doc-cooling-fan"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 0.25,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.43067655807339306
+            }
+          }
+        },
+        "metric_deltas": {
+          "hit_at_k": {
+            "1": -1.0,
+            "3": -1.0,
+            "5": 0.0
+          },
+          "precision_at_k": {
+            "1": -1.0,
+            "3": -0.3333333333333333,
+            "5": 0.0
+          },
+          "recall_at_k": {
+            "1": -1.0,
+            "3": -1.0,
+            "5": 0.0
+          },
+          "reciprocal_rank": -0.75,
+          "ndcg_at_k": {
+            "1": -1.0,
+            "3": -1.0,
+            "5": -0.5693234419266069
+          }
+        },
+        "depth_coverage_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0
+        },
+        "failure_tags": [
+          "top_k_total_miss",
+          "reranker_regression"
+        ]
+      },
+      {
+        "query_id": "query-003",
+        "query_text": "How should calibration drift be corrected?",
+        "relevant_document_ids": [
+          "doc-sensor-calibration"
+        ],
+        "before_reranking": {
+          "ranked_document_ids": [
+            "doc-sensor-installation",
+            "doc-sensor-cleaning",
+            "doc-sensor-wiring",
+            "doc-sensor-storage",
+            "doc-sensor-specification"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 0
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            },
+            "reciprocal_rank": 0.0,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            }
+          }
+        },
+        "after_reranking": {
+          "ranked_document_ids": [
+            "doc-sensor-installation",
+            "doc-sensor-cleaning",
+            "doc-sensor-wiring",
+            "doc-sensor-storage",
+            "doc-sensor-specification"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 0
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            },
+            "reciprocal_rank": 0.0,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.0
+            }
+          }
+        },
+        "metric_deltas": {
+          "hit_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "reciprocal_rank": 0.0,
+          "ndcg_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          }
+        },
+        "depth_coverage_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0
+        },
+        "failure_tags": [
+          "no_relevant_candidate",
+          "top_k_total_miss",
+          "persistent_top_k_miss",
+          "reranker_unchanged"
+        ]
+      },
+      {
+        "query_id": "query-004",
+        "query_text": "How can valve pressure oscillation be reduced?",
+        "relevant_document_ids": [
+          "doc-valve-tuning"
+        ],
+        "before_reranking": {
+          "ranked_document_ids": [
+            "doc-pressure-basics",
+            "doc-valve-installation",
+            "doc-pipe-sizing",
+            "doc-control-loop",
+            "doc-valve-tuning"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 0.2,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.38685280723454163
+            }
+          }
+        },
+        "after_reranking": {
+          "ranked_document_ids": [
+            "doc-valve-installation",
+            "doc-pressure-basics",
+            "doc-pipe-sizing",
+            "doc-valve-tuning",
+            "doc-control-loop"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 0,
+              "3": 0,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.2
+            },
+            "recall_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 0.25,
+            "ndcg_at_k": {
+              "1": 0.0,
+              "3": 0.0,
+              "5": 0.43067655807339306
+            }
+          }
+        },
+        "metric_deltas": {
+          "hit_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "reciprocal_rank": 0.04999999999999999,
+          "ndcg_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.04382375083885143
+          }
+        },
+        "depth_coverage_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0
+        },
+        "failure_tags": [
+          "top_k_total_miss",
+          "persistent_top_k_miss",
+          "reranker_unchanged"
+        ]
+      },
+      {
+        "query_id": "query-005",
+        "query_text": "Which documents are needed for an emergency shutdown?",
+        "relevant_document_ids": [
+          "doc-esd-procedure",
+          "doc-esd-checklist"
+        ],
+        "before_reranking": {
+          "ranked_document_ids": [
+            "doc-esd-procedure",
+            "doc-general-safety",
+            "doc-esd-checklist",
+            "doc-fire-response",
+            "doc-shift-handover"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 1,
+              "3": 1,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 1.0,
+              "3": 0.6666666666666666,
+              "5": 0.4
+            },
+            "recall_at_k": {
+              "1": 0.5,
+              "3": 1.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 1.0,
+            "ndcg_at_k": {
+              "1": 1.0,
+              "3": 0.9197207891481876,
+              "5": 0.9197207891481876
+            }
+          }
+        },
+        "after_reranking": {
+          "ranked_document_ids": [
+            "doc-esd-procedure",
+            "doc-general-safety",
+            "doc-esd-checklist",
+            "doc-fire-response",
+            "doc-shift-handover"
+          ],
+          "metrics": {
+            "hit_at_k": {
+              "1": 1,
+              "3": 1,
+              "5": 1
+            },
+            "precision_at_k": {
+              "1": 1.0,
+              "3": 0.6666666666666666,
+              "5": 0.4
+            },
+            "recall_at_k": {
+              "1": 0.5,
+              "3": 1.0,
+              "5": 1.0
+            },
+            "reciprocal_rank": 1.0,
+            "ndcg_at_k": {
+              "1": 1.0,
+              "3": 0.9197207891481876,
+              "5": 0.9197207891481876
+            }
+          }
+        },
+        "metric_deltas": {
+          "hit_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          },
+          "reciprocal_rank": 0.0,
+          "ndcg_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0
+          }
+        },
+        "depth_coverage_at_k": {
+          "1": 1.0,
+          "3": 1.0,
+          "5": 1.0
+        },
+        "failure_tags": [
+          "reranker_unchanged"
+        ]
+      }
+    ],
+    "failure_analysis": {
+      "evaluated_query_count": 5,
+      "failure_case_count": 3,
+      "failure_case_rate": 0.6,
+      "tag_counts": {
+        "no_relevant_candidate": 1,
+        "partial_relevant_candidate_coverage": 0,
+        "top_k_total_miss": 3,
+        "top_k_incomplete_coverage": 0,
+        "persistent_top_k_miss": 2,
+        "reranker_regression": 1,
+        "reranker_rescue": 1,
+        "reranker_improvement": 1,
+        "reranker_unchanged": 3
+      },
+      "tag_rates": {
+        "no_relevant_candidate": 0.2,
+        "partial_relevant_candidate_coverage": 0.0,
+        "top_k_total_miss": 0.6,
+        "top_k_incomplete_coverage": 0.0,
+        "persistent_top_k_miss": 0.4,
+        "reranker_regression": 0.2,
+        "reranker_rescue": 0.2,
+        "reranker_improvement": 0.2,
+        "reranker_unchanged": 0.6
+      },
+      "failure_cases": [
+        {
+          "query_id": "query-002",
+          "query_text": "What should I inspect when the motor overheats?",
+          "relevant_document_ids": [
+            "doc-motor-thermal"
+          ],
+          "failure_tags": [
+            "top_k_total_miss",
+            "reranker_regression"
+          ],
+          "primary_k": 3,
+          "before_top_k_document_ids": [
+            "doc-motor-thermal",
+            "doc-bearing",
+            "doc-motor-wiring"
+          ],
+          "after_top_k_document_ids": [
+            "doc-bearing",
+            "doc-motor-wiring",
+            "doc-lubrication"
+          ],
+          "before_ndcg_at_primary_k": 1.0,
+          "after_ndcg_at_primary_k": 0.0,
+          "ndcg_delta_at_primary_k": -1.0
+        },
+        {
+          "query_id": "query-003",
+          "query_text": "How should calibration drift be corrected?",
+          "relevant_document_ids": [
+            "doc-sensor-calibration"
+          ],
+          "failure_tags": [
+            "no_relevant_candidate",
+            "top_k_total_miss",
+            "persistent_top_k_miss",
+            "reranker_unchanged"
+          ],
+          "primary_k": 3,
+          "before_top_k_document_ids": [
+            "doc-sensor-installation",
+            "doc-sensor-cleaning",
+            "doc-sensor-wiring"
+          ],
+          "after_top_k_document_ids": [
+            "doc-sensor-installation",
+            "doc-sensor-cleaning",
+            "doc-sensor-wiring"
+          ],
+          "before_ndcg_at_primary_k": 0.0,
+          "after_ndcg_at_primary_k": 0.0,
+          "ndcg_delta_at_primary_k": 0.0
+        },
+        {
+          "query_id": "query-004",
+          "query_text": "How can valve pressure oscillation be reduced?",
+          "relevant_document_ids": [
+            "doc-valve-tuning"
+          ],
+          "failure_tags": [
+            "top_k_total_miss",
+            "persistent_top_k_miss",
+            "reranker_unchanged"
+          ],
+          "primary_k": 3,
+          "before_top_k_document_ids": [
+            "doc-pressure-basics",
+            "doc-valve-installation",
+            "doc-pipe-sizing"
+          ],
+          "after_top_k_document_ids": [
+            "doc-valve-installation",
+            "doc-pressure-basics",
+            "doc-pipe-sizing"
+          ],
+          "before_ndcg_at_primary_k": 0.0,
+          "after_ndcg_at_primary_k": 0.0,
+          "ndcg_delta_at_primary_k": 0.0
+        }
+      ]
+    },
+    "aggregate_metrics": {
+      "before_reranking": {
+        "hit_rate_at_k": {
+          "1": 0.4,
+          "3": 0.4,
+          "5": 0.8
+        },
+        "macro_precision_at_k": {
+          "1": 0.4,
+          "3": 0.2,
+          "5": 0.2
+        },
+        "macro_recall_at_k": {
+          "1": 0.3,
+          "3": 0.4,
+          "5": 0.8
+        },
+        "mrr": 0.49000000000000005,
+        "macro_ndcg_at_k": {
+          "1": 0.4,
+          "3": 0.38394415782963753,
+          "5": 0.5474500308912245
+        }
+      },
+      "after_reranking": {
+        "hit_rate_at_k": {
+          "1": 0.4,
+          "3": 0.4,
+          "5": 0.8
+        },
+        "macro_precision_at_k": {
+          "1": 0.4,
+          "3": 0.2,
+          "5": 0.2
+        },
+        "macro_recall_at_k": {
+          "1": 0.3,
+          "3": 0.4,
+          "5": 0.8
+        },
+        "mrr": 0.5,
+        "macro_ndcg_at_k": {
+          "1": 0.4,
+          "3": 0.38394415782963753,
+          "5": 0.5562147810589948
+        }
+      },
+      "metric_deltas": {
+        "hit_rate_at_k": {
+          "1": 0.0,
+          "3": 0.0,
+          "5": 0.0
+        },
+        "macro_precision_at_k": {
+          "1": 0.0,
+          "3": 0.0,
+          "5": 0.0
+        },
+        "macro_recall_at_k": {
+          "1": 0.0,
+          "3": 0.0,
+          "5": 0.0
+        },
+        "mrr": 0.009999999999999953,
+        "macro_ndcg_at_k": {
+          "1": 0.0,
+          "3": 0.0,
+          "5": 0.008764750167770341
+        }
+      },
+      "macro_depth_coverage_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0
+      }
+    }
+  }
+}
