@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluate RAG Retrieval"
+  short_description: "Evaluate retrieval and reranker quality against ground truth"
+  default_prompt: "Use $evaluate-rag-retrieval to compare my RAG rankings against ground truth and produce an evidence-based report."

@@ -1,5 +1,6 @@
 import unittest
 
+from tests import _skill_path  # noqa: F401
 from rag_retrieval_evaluator.metrics import (
     aggregate_metrics,
     build_ranked_document_ids,

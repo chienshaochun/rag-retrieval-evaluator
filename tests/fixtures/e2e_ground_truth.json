@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "industrial-maintenance-e2e-demo",
+  "queries": [
+    {
+      "query_id": "query-001",
+      "query_text": "How do I reset the pump overload alarm?",
+      "relevant_document_ids": ["doc-pump-reset"],
+      "metadata": {"category": "pump"}
+    },
+    {
+      "query_id": "query-002",
+      "query_text": "What should I inspect when the motor overheats?",
+      "relevant_document_ids": ["doc-motor-thermal"],
+      "metadata": {"category": "motor"}
+    },
+    {
+      "query_id": "query-003",
+      "query_text": "How should calibration drift be corrected?",
+      "relevant_document_ids": ["doc-sensor-calibration"],
+      "metadata": {"category": "sensor"}
+    },
+    {
+      "query_id": "query-004",
+      "query_text": "How can valve pressure oscillation be reduced?",
+      "relevant_document_ids": ["doc-valve-tuning"],
+      "metadata": {"category": "valve"}
+    },
+    {
+      "query_id": "query-005",
+      "query_text": "Which documents are needed for an emergency shutdown?",
+      "relevant_document_ids": [
+        "doc-esd-procedure",
+        "doc-esd-checklist"
+      ],
+      "metadata": {"category": "safety"}
+    },
+    {
+      "query_id": "query-006",
+      "query_text": "When should the hydraulic filter be replaced?",
+      "relevant_document_ids": ["doc-filter-replacement"],
+      "metadata": {"category": "hydraulic"}
+    }
+  ]
+}

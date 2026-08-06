@@ -1,5 +1,6 @@
 import unittest
 
+from tests import _skill_path  # noqa: F401
 from rag_retrieval_evaluator.comparison import (
     calculate_aggregate_metric_deltas,
     calculate_query_metric_deltas,

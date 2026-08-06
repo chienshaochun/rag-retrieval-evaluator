@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "run_name": "hybrid-search-plus-reranker-e2e-demo",
+  "results": [
+    {
+      "query_id": "query-001",
+      "candidates": [
+        {"chunk_id": "q1-c1", "document_id": "doc-alarm-overview"},
+        {"chunk_id": "q1-c2", "document_id": "doc-pump-safety"},
+        {"chunk_id": "q1-c3", "document_id": "doc-pump-faq"},
+        {"chunk_id": "q1-c4", "document_id": "doc-pump-reset"},
+        {"chunk_id": "q1-c5", "document_id": "doc-legacy-pump"}
+      ],
+      "before_reranking": [
+        {"chunk_id": "q1-c1", "score": 0.95},
+        {"chunk_id": "q1-c2", "score": 0.88},
+        {"chunk_id": "q1-c3", "score": 0.81},
+        {"chunk_id": "q1-c4", "score": 0.74},
+        {"chunk_id": "q1-c5", "score": 0.63}
+      ],
+      "after_reranking": [
+        {"chunk_id": "q1-c4", "score": "high"},
+        {"chunk_id": "q1-c1", "score": 0.77},
+        {"chunk_id": "q1-c2", "score": 0.61},
+        {"chunk_id": "q1-c3", "score": 0.42},
+        {"chunk_id": "q1-c5", "score": 0.20}
+      ]
+    },
+    {
+      "query_id": "query-002",
+      "candidates": [
+        {"chunk_id": "q2-c1", "document_id": "doc-motor-thermal"},
+        {"chunk_id": "q2-c2", "document_id": "doc-bearing"},
+        {"chunk_id": "q2-c3", "document_id": "doc-motor-wiring"},
+        {"chunk_id": "q2-c4", "document_id": "doc-lubrication"},
+        {"chunk_id": "q2-c5", "document_id": "doc-cooling-fan"}
+      ],
+      "before_reranking": [
+        {"chunk_id": "q2-c1"},
+        {"chunk_id": "q2-c2"},
+        {"chunk_id": "q2-c3"},
+        {"chunk_id": "q2-c4"},
+        {"chunk_id": "q2-c5"}
+      ],
+      "after_reranking": [
+        {"chunk_id": "q2-c2"},
+        {"chunk_id": "q2-c3"},
+        {"chunk_id": "q2-c4"},
+        {"chunk_id": "q2-c1"},
+        {"chunk_id": "q2-c5"}
+      ]
+    },
+    {
+      "query_id": "query-003",
+      "candidates": [
+        {"chunk_id": "q3-c1", "document_id": "doc-sensor-installation"},
+        {"chunk_id": "q3-c2", "document_id": "doc-sensor-cleaning"},
+        {"chunk_id": "q3-c3", "document_id": "doc-sensor-wiring"},
+        {"chunk_id": "q3-c4", "document_id": "doc-sensor-storage"},
+        {"chunk_id": "q3-c5", "document_id": "doc-sensor-specification"}
+      ],
+      "before_reranking": [
+        {"chunk_id": "q3-c1"},
+        {"chunk_id": "q3-c2"},
+        {"chunk_id": "q3-c3"},
+        {"chunk_id": "q3-c4"},
+        {"chunk_id": "q3-c5"}
+      ],
+      "after_reranking": [
+        {"chunk_id": "q3-c1"},
+        {"chunk_id": "q3-c2"},
+        {"chunk_id": "q3-c3"},
+        {"chunk_id": "q3-c4"},
+        {"chunk_id": "q3-c5"}
+      ]
+    },
+    {
+      "query_id": "query-004",
+      "candidates": [
+        {"chunk_id": "q4-c1", "document_id": "doc-pressure-basics"},
+        {"chunk_id": "q4-c2", "document_id": "doc-valve-installation"},
+        {"chunk_id": "q4-c3", "document_id": "doc-pipe-sizing"},
+        {"chunk_id": "q4-c4", "document_id": "doc-control-loop"},
+        {"chunk_id": "q4-c5", "document_id": "doc-valve-tuning"}
+      ],
+      "before_reranking": [
+        {"chunk_id": "q4-c1"},
+        {"chunk_id": "q4-c2"},
+        {"chunk_id": "q4-c3"},
+        {"chunk_id": "q4-c4"},
+        {"chunk_id": "q4-c5"}
+      ],
+      "after_reranking": [
+        {"chunk_id": "q4-c2"},
+        {"chunk_id": "q4-c1"},
+        {"chunk_id": "q4-c3"},
+        {"chunk_id": "q4-c5"},
+        {"chunk_id": "q4-c4"}
+      ]
+    },
+    {
+      "query_id": "query-005",
+      "candidates": [
+        {"chunk_id": "q5-c1", "document_id": "doc-esd-procedure"},
+        {"chunk_id": "q5-c2", "document_id": "doc-general-safety"},
+        {"chunk_id": "q5-c3", "document_id": "doc-esd-checklist"},
+        {"chunk_id": "q5-c4", "document_id": "doc-fire-response"},
+        {"chunk_id": "q5-c5", "document_id": "doc-shift-handover"}
+      ],
+      "before_reranking": [
+        {"chunk_id": "q5-c1"},
+        {"chunk_id": "q5-c2"},
+        {"chunk_id": "q5-c3"},
+        {"chunk_id": "q5-c4"},
+        {"chunk_id": "q5-c5"}
+      ],
+      "after_reranking": [
+        {"chunk_id": "q5-c1"},
+        {"chunk_id": "q5-c2"},
+        {"chunk_id": "q5-c3"},
+        {"chunk_id": "q5-c4"},
+        {"chunk_id": "q5-c5"}
+      ]
+    },
+    {
+      "query_id": "query-999",
+      "candidates": [
+        {"chunk_id": "q999-c1", "document_id": "doc-unlabeled"}
+      ],
+      "before_reranking": [{"chunk_id": "q999-c1"}],
+      "after_reranking": [{"chunk_id": "q999-c1"}]
+    }
+  ]
+}

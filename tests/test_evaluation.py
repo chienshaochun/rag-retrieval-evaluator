@@ -1,5 +1,6 @@
 import unittest
 
+from tests import _skill_path  # noqa: F401
 from rag_retrieval_evaluator.evaluation import (
     evaluate_matched_queries,
     evaluate_matched_query,

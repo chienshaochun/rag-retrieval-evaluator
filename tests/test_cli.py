@@ -5,6 +5,7 @@ import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
+from tests import _skill_path  # noqa: F401
 from rag_retrieval_evaluator.cli import main
 
 

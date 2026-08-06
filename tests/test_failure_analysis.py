@@ -1,5 +1,6 @@
 import unittest
 
+from tests import _skill_path  # noqa: F401
 from rag_retrieval_evaluator.failure_analysis import (
     generate_failure_tags,
     summarize_failure_tags,
