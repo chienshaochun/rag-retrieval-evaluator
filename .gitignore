@@ -15,3 +15,6 @@ dist/
 
 .idea/
 .vscode/
+
+# Local RAG evaluation runs
+/evaluation_runs/
