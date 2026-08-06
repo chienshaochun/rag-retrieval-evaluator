@@ -18,6 +18,7 @@ from .metrics import (
     reciprocal_rank,
 )
 from .pairing import pair_query_records
+from .pipeline import run_evaluation_pipeline
 from .validation import (
     GroundTruthValidationError,
     RetrievalResultsValidationError,
@@ -42,6 +43,7 @@ __all__ = [
     "recall_at_k",
     "reciprocal_rank",
     "pair_query_records",
+    "run_evaluation_pipeline",
     "GroundTruthValidationError",
     "RetrievalResultsValidationError",
     "validate_ground_truth",
